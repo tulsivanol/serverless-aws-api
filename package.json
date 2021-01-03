@@ -10,11 +10,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnomalyInnovations/serverless-nodejs-starter.git"
+    "url": "https://github.com/tulsivanol/serverless-aws-api.git"
   },
   "devDependencies": {
     "aws-sdk": "^2.820.0",
-    "serverless-bundle": "3.2.0",
+    "serverless-bundle": "^3.2.0",
     "serverless-dotenv-plugin": "^2.1.1",
     "serverless-offline": "^5.3.3"
   },
