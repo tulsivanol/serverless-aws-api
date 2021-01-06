@@ -10,6 +10,9 @@ plugins:
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
 
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
+
 provider:
   name: aws
   runtime: nodejs10.x
@@ -43,6 +46,7 @@ functions:
       - http:
           path: notes
           method: post
+          cors: true
           authorizer: aws_iam
   get:
     handler: get.main
@@ -57,6 +61,7 @@ functions:
       - http:
           path: notes
           method: get
+          cors: true
           authorizer: aws_iam
   update:
     handler: update.main
@@ -72,6 +77,7 @@ functions:
       - http:
           path: notes/{id}
           method: delete
+          cors: true
           authorizer: aws_iam
 
   billing:
@@ -80,4 +86,5 @@ functions:
       - http:
           path: billing
           method: post
+          cors: true
           authorizer: aws_iam
