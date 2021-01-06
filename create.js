@@ -7,7 +7,7 @@ export const main = hanlder(async (event, ctx) => {
   const params = {
     TableName: process.env.TABLE_NAME,
     Item: {
-      userId: "123",
+      userId: event.requestContext.identity.cognitoIdentityId,
       noteId: uuid.v1(),
       content: data.content,
       attachment: data.attachment,
